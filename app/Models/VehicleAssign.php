@@ -33,6 +33,10 @@ class VehicleAssign extends Model
     {
         return $date->format('Y-m-d H:i:s');
     }
+    public function hasAssignedVehicle()
+    {
+        return $this->vehicles()->count() > 0;
+    }
 
     public function driver()
     {

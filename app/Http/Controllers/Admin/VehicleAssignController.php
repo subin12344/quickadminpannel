@@ -21,9 +21,12 @@ class VehicleAssignController extends Controller
 
     public function create()
     {
-        $drivers = CreateDriver::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $drivers = CreateDriver::pluck('name','id')->prepend(trans('global.pleaseSelect'), '');
+
         $routes = TransportRoute::pluck('route_name', 'id')->prepend(trans('global.pleaseSelect'), '');
-        $vehicle_names = Createvehicle::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+
+        $vehicle_names = Createvehicle::pluck('name','id')->prepend(trans('global.pleaseSelect'), '');
+
         return view('admin.vehicleAssigns.create', compact('drivers', 'routes', 'vehicle_names'));
     }
 

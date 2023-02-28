@@ -29,7 +29,7 @@ class CreateDriver extends Model
         'updated_at',
         'deleted_at',
     ];
-
+   
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');
@@ -46,6 +46,6 @@ class CreateDriver extends Model
     }
     public function hasVehicle()
     {
-    return $this->vehicles()->exists();
+        return $this->vehicles()->exists();
     }
 }

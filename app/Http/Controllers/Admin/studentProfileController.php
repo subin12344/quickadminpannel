@@ -56,12 +56,12 @@ class StudentprofileController extends Controller
         return redirect()->route('admin.studentprofiles.index');
     }
 
-    public function show($id)
+    public function show(AssignStudent $studentprofiles)
     {
         // dd($id);
         // abort_if(Gate::denies('studentprofile_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-
+        $studentprofiles->load('name', 'master', 'route', 'vehicle_name', 'stop_name', 'amount');
         return view('admin.studentprofiles.index', compact('studentprofiles'));
     }
 
