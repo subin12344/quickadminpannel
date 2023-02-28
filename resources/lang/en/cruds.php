@@ -385,5 +385,10 @@ return [
             'amount_helper'       => ' ',
         ],
     ],
+    'studentprofile' => [
+        'title'          => 'Studentprofile',
+        'title_singular' => 'Studentprofile',
+        'profile'        => 'profile',
+    ],
 
 ];
