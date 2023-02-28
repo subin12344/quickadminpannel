@@ -87,7 +87,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Studentprofile
     Route::delete('studentprofiles/destroy', 'StudentprofileController@massDestroy')->name('studentprofiles.massDestroy');
     Route::resource('studentprofiles', 'StudentprofileController');
-    Route::get('/studentprofiles/{2}', [StudentprofileController::class, 'index']);
+    Route::get('/studentprofiles/{$id}', [StudentprofileController::class, 'show']);
 
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {

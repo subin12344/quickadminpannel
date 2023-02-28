@@ -15,15 +15,15 @@ use App\Models\users;
 class StudentprofileController extends Controller
 {
 
-    public function index($id)
+    public function index()
     {
         // abort_if(Gate::denies('studentprofile_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        dd($id);
+
         // $studentprofiles = AssignStudent::with(['name', 'master', 'route', 'vehicle_name', 'stop_name', 'amount'])->get();
-        $studentprofiles = Users::find($id);
+
         // return view('posts.show', compact('post'));
 
-        return view('admin.studentprofiles.index', compact('studentprofiles'));
+        return view('admin.studentprofiles.index');
     }
 
     public function create()
@@ -54,11 +54,13 @@ class StudentprofileController extends Controller
         return redirect()->route('admin.studentprofiles.index');
     }
 
-    public function show(Studentprofile $studentprofile)
+    public function show($id)
     {
+        dd($id);
         // abort_if(Gate::denies('studentprofile_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        $studentprofiles = Users::find($id);
 
-        return view('admin.studentprofiles.show', compact('studentprofile'));
+        return view('admin.studentprofiles.index', compact('studentprofiles'));
     }
 
     public function destroy(Studentprofile $studentprofile)
