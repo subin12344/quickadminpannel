@@ -44,4 +44,8 @@ class CreateDriver extends Model
     {
         $this->attributes['expirydate'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
     }
+    public function hasVehicle()
+    {
+    return $this->vehicles()->exists();
+    }
 }

@@ -278,6 +278,18 @@
                                     </a>
                                 </li>
                             @endcan
+                            @can('assign_student_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.studentprofiles.index") }}" class="nav-link {{ request()->is("admin/studentprofiles") || request()->is("admin/studentprofiles/*") ? "active" : "" }}">
+                                        <i class="fa-fw nav-icon fas fa-cogs">
+
+                                        </i>
+                                        <p>
+                                            {{ trans('cruds.studentprofile.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
                         </ul>
                     </li>
                 @endcan
