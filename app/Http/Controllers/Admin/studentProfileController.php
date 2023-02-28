@@ -19,11 +19,11 @@ class StudentprofileController extends Controller
     {
         // abort_if(Gate::denies('studentprofile_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        // $studentprofiles = AssignStudent::with(['name', 'master', 'route', 'vehicle_name', 'stop_name', 'amount'])->get();
+        $studentprofiles = AssignStudent::with(['name', 'master', 'route', 'vehicle_name', 'stop_name', 'amount'])->get();
 
         // return view('posts.show', compact('post'));
-        $studentprofiles = User::all();
-        // dd($studentprofiles[1]['name']);
+        // $studentprofiles = User::all();
+        // dd($studentprofiles);
 
         return view('admin.studentprofiles.index', compact('studentprofiles'));
     }
@@ -85,3 +85,4 @@ class StudentprofileController extends Controller
         return response(null, Response::HTTP_NO_CONTENT);
     }
 }
+
