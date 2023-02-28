@@ -10,7 +10,7 @@ use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Models\AssignStudent;
-use App\Models\users;
+use App\Models\user;
 
 class StudentprofileController extends Controller
 {
@@ -22,8 +22,10 @@ class StudentprofileController extends Controller
         // $studentprofiles = AssignStudent::with(['name', 'master', 'route', 'vehicle_name', 'stop_name', 'amount'])->get();
 
         // return view('posts.show', compact('post'));
+        $studentprofiles = User::all();
+        // dd($studentprofiles[1]['name']);
 
-        return view('admin.studentprofiles.index');
+        return view('admin.studentprofiles.index', compact('studentprofiles'));
     }
 
     public function create()
@@ -56,9 +58,9 @@ class StudentprofileController extends Controller
 
     public function show($id)
     {
-        dd($id);
+        // dd($id);
         // abort_if(Gate::denies('studentprofile_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        $studentprofiles = Users::find($id);
+
 
         return view('admin.studentprofiles.index', compact('studentprofiles'));
     }

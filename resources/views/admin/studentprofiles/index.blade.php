@@ -51,10 +51,10 @@
                   <div class="card shadow-sm">
                     <div class="card-header bg-transparent text-center">
                       <img class="profile_img" src="https://placeimg.com/640/480/arch/any" alt="">
-                      <h3>{{ $studentprofiles->id ?? '' }}</h3>
+                      <h3>{{ $studentprofiles[1]['name'] ?? '' }}</h3>
                     </div>
                     <div class="card-body">
-                      <p class="mb-0"><strong class="pr-1">Student ID:</strong>321000001</p>
+                      <p class="mb-0"><strong class="pr-1">Master ID:</strong>321000001</p>
                       <p class="mb-0"><strong class="pr-1">Class:</strong>4</p>
                       <p class="mb-0"><strong class="pr-1">Section:</strong>A</p>
                     </div>
